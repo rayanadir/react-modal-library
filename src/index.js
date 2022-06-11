@@ -1,6 +1,21 @@
-import React from 'react'
-import styles from './styles.module.css'
+import React from 'react';
+import ReactDOM from "react-dom";
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const ModalContent = ({ isShowing, hide, ...props }) => {
+  return isShowing ?
+    ReactDOM.createPortal(
+      <React.Fragment>
+        <div className='modal-overlay'>
+          <section className='modal'>
+            <button onClick={hide} className="modal-close-btn" type='button'>
+              <span className='icon'>&#x2715;</span>
+            </button>
+            <div className='modal-body'>{props.children}</div>
+          </section>
+        </div>
+      </React.Fragment>
+      ,
+      document.body
+    )
+    : null;
 }
