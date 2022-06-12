@@ -25,7 +25,7 @@ code {
 }
 .modal {
   z-index: 100;
-  background: #d3d3d3;
+  background: #fff;
   position: relative;
   margin: auto;
   border-radius: 5px;
@@ -43,8 +43,8 @@ code {
   font-weight: 700;
   cursor: pointer;
   position: absolute;
-  right: -5px;
-  top: -5px;
+  right: -12px;
+  top: -12px;
   border-radius:16px;
   border: 1px solid grey;
 }

@@ -1,17 +1,18 @@
 import React from 'react'
-import useModal from './useModal'
 import { ModalContent } from 'modal-library'
 import 'modal-library/dist/index.css'
+import PropTypes from 'prop-types';
 
-const Modal = () => {
-  const { isShowing, toggle } = useModal()
+const Modal = ({element, isShowing, toggle}) => {
   return (
-    <div>
-      <button onClick={toggle}>Show modal</button>
       <ModalContent isShowing={isShowing} hide={toggle}> 
-        Modal content
+        {element}
       </ModalContent>
-    </div>
   )
 }
+
+Modal.propTypes={
+  element: PropTypes.element
+}
+
 export default Modal
