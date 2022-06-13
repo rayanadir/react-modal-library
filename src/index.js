@@ -1,21 +1,27 @@
-import React from 'react';
-import ReactDOM from "react-dom";
+import React from 'react'
+import { ModalContent } from './ModalContent'
+import PropTypes from 'prop-types';
+import { useState } from "react";
 
-export const ModalContent = ({ isShowing, hide, ...props }) => {
-  return isShowing ?
-    ReactDOM.createPortal(
-      <React.Fragment>
-        <div className='modal-overlay'>
-          <section className='modal'>
-            <button onClick={hide} className="modal-close-btn" type='button'>
-              <span className='icon'>&#x2715;</span>
-            </button>
-            <div className='modal-body'>{props.children}</div>
-          </section>
-        </div>
-      </React.Fragment>
-      ,
-      document.body
-    )
-    : null;
+export const Modal = ({element, isShowing, toggle}) => {
+  return (
+      <ModalContent isShowing={isShowing} hide={toggle}> 
+        {element}
+      </ModalContent>
+  )
 }
+
+export const useModal = () => {
+  const [isShowing, setIsShowing] = useState(false); 
+  const toggle = () => {
+      setIsShowing(!isShowing)
+  }
+  return { isShowing, toggle }
+}
+
+Modal.propTypes={
+  element: PropTypes.element,
+  isShowing: PropTypes.bool,
+  toggle: PropTypes.func,
+}
+
