@@ -2,7 +2,7 @@ import React from 'react'
 import { ModalContent } from './ModalContent'
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import './modal.css'
+import './styles.module.css'
 
 export const Modal = ({element, isShowing, toggle}) => {
   return (
