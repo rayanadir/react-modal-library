@@ -7,23 +7,51 @@
 ## Install
 
 ```bash
-npm install --save modal-library
+npm i react-modal-library-rayan-dahmena
 ```
 
 ## Usage
 
+In your `App.jsx` file
+
 ```jsx
-import React, { Component } from 'react'
+import React from "react"
 
-import MyComponent from 'modal-library'
-import 'modal-library/dist/index.css'
+import { Modal, useModal } from "react-modal-library-rayan-dahmena"
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+//Create your own component modal content
+import MyComponentContent from " *your path* "
+
+const App = () => {
+
+  // Declare useModal hook
+  const { isShowing, toggle } = useModal();
+
+  return (
+    <div>
+      <button onClick={toggle}>Open Modal</button>
+      <Modal element={<MyComponentContent />} isShowing={isShowing} toggle={toggle}/>
+    </div>
+  )
+} 
+
 ```
+
+`MyComponentContent.jsx` file
+```jsx
+import React from "react"
+
+const MyComponentContent = () => {
+  return(
+    <div>
+      My modal content
+    </div>
+  )
+}
+
+export default MyComponentContent
+```
+
 
 ## License
 
