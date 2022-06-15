@@ -51,7 +51,7 @@ export const ModalContent = ({ isShowing, hide, ...props }) => {
             background-color: transparent;
           }
           .modal-body{
-            padding: 1rem 2rem;
+            padding: 2rem;
           }
           .icon{
             font-size: 18px;
