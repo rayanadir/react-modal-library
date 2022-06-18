@@ -2,7 +2,14 @@ import React from 'react'
 import { ModalContent } from './ModalContent'
 import PropTypes from 'prop-types';
 
-const Modal = ({element, isShowing, toggle}) => {
+/**
+ * Modal component
+ * @param {JSX} element
+ * @param {boolean} isShowing
+ * @param {function} toggle 
+ * @returns Modal
+ */
+ export const Modal = ({element, isShowing, toggle}) => {
   return (
       <ModalContent isShowing={isShowing} hide={toggle}> 
         {element}

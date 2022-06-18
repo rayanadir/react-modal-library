@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ModalContent } from './ModalContent'
 import PropTypes from 'prop-types';
-import { useState } from "react";
-import './styles.module.css'
 
+/**
+ * Modal component
+ * @param {JSX} element
+ * @param {boolean} isShowing
+ * @param {function} toggle 
+ * @returns Modal
+ */
 export const Modal = ({element, isShowing, toggle}) => {
   return (
       <ModalContent isShowing={isShowing} hide={toggle}> 
@@ -12,6 +17,10 @@ export const Modal = ({element, isShowing, toggle}) => {
   )
 }
 
+/**
+ * useModal hook
+ * @returns object {isShowing, toggle}
+ */
 export const useModal = () => {
   const [isShowing, setIsShowing] = useState(false); 
   const toggle = () => {

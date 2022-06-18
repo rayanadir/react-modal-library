@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import './styles.module.css'
+import PropTypes from 'prop-types';
 
+/**
+ * The content of the modal
+ * @param {boolean} isShowing
+ * @param {function} hide
+ * @param {any} props
+ * @returns JSX element, the content of the modal 
+ */
 export const ModalContent = ({ isShowing, hide, ...props }) => {
   return isShowing ?
     ReactDOM.createPortal(
@@ -68,3 +75,8 @@ export const ModalContent = ({ isShowing, hide, ...props }) => {
     : null;
 }
 
+ModalContent.propTypes={
+  isShowing: PropTypes.bool,
+  hide: PropTypes.func,
+  props: PropTypes.any,
+}
