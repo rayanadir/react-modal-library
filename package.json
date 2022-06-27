@@ -5,6 +5,7 @@
   "author": "Rayan Dahmena",
   "license": "MIT",
   "repository": "rayanadir/modal-library",
+  "keywords": ["react", "react-component", "react-modal", "dialog"],
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
