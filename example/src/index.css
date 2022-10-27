@@ -27,11 +27,14 @@ code {
   z-index: 100;
   background: #fff;
   position: relative;
-  margin: auto;
   border-radius: 5px;
   max-width: 500px;
   width: 80%;
-  top: 37%;
+  top: 50%;
+  max-height: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 2rem;
 }
 .modal-close-btn {
   display: flex;
@@ -43,17 +46,37 @@ code {
   font-weight: 700;
   cursor: pointer;
   position: absolute;
-  right: -12px;
-  top: -12px;
+  right: 0;
   border-radius:16px;
-  border: 1px solid grey;
+  border: 0;
+  background-color: transparent;
 }
 .modal-body{
-  padding: 1rem 2rem;
+  padding: 2rem 1rem 0;
 }
 .icon{
   font-size: 18px;
   height: 18px;
   display: flex;
   align-items: center;
+}
+.text-content{
+  white-space: break-spaces;
+  max-height: 452px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

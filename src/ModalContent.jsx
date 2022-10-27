@@ -36,11 +36,14 @@ export const ModalContent = ({ isShowing, hide, ...props }) => {
             z-index: 100;
             background: #fff;
             position: relative;
-            margin: auto;
             border-radius: 5px;
             max-width: 500px;
             width: 80%;
-            top: 37%;
+            top: 50%;
+            max-height: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-bottom: 2rem;
           }
           .modal-close-btn {
             display: flex;
@@ -58,13 +61,28 @@ export const ModalContent = ({ isShowing, hide, ...props }) => {
             background-color: transparent;
           }
           .modal-body{
-            padding: 2rem;
+            padding: 2rem 1rem 0;
           }
           .icon{
             font-size: 18px;
             height: 18px;
             display: flex;
             align-items: center;
+          }
+          .text-content{
+            white-space: break-spaces;
+            max-height: 452px;
+            overflow: scroll;
+            overflow-x: hidden;
+          }
+          ::-webkit-scrollbar {
+            width: 10px;
+          }
+          ::-webkit-scrollbar-thumb {
+            background: #888; 
+          }
+          ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
           }
   `}
         </style>
